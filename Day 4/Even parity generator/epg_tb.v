@@ -1,7 +1,7 @@
-module epc_tb;
+module epg_tb;
 reg a,b,c;
 wire x;
-epc uut(.a(a),.b(b),.c(c),.x(x));
+epg uut(.a(a),.b(b),.c(c),.x(x));
 initial begin
 $monitor("a=%b,b=%b,c=%b,x=%b",a,b,c,x);
 $dumpfile("waves.vcd");
