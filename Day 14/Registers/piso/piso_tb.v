@@ -1,4 +1,3 @@
-
 module sipotb;
 reg[3:0] pi;
 reg clk,rs,load;
