@@ -1,17 +1,39 @@
 
-Which of the statements will execute from the below snippet & justify the behavior?
+Write a Verilog code to generate 20 odd or even values using a function.
 
-reg c = 3’b00x;
-always@(*)
-begin
-casex( c )
-3’b000:st1;
-3’b100:st2;
-3’b001:st3;
+ANSWER : 
 
-endcase
-end
+ODD
+
+  module generate_numbers;
+  function [7:0] get_even;
+    input [4:0] index;
+    begin
+      get_even = index * 2+1;
+    end
+  endfunction
+
+  integer i;
+  initial begin
+    for (i = 0; i < 20; i = i + 1)
+      $display("odd[%0d] = %0d", i, get_even(i));
+  end
+endmodule
 
 
-ANSWER : st1 is executed
-Because casex treats x in the value and case items as "don’t care", 3'b00x matches both 3'b000 and 3'b001, but 3'b000 appears first — so st1 is executed.
+EVEN 
+
+module generate_numbers;
+  function [7:0] get_even;
+    input [4:0] index;
+    begin
+      get_even = index * 2;
+    end
+  endfunction
+
+  integer i;
+  initial begin
+    for (i = 0; i < 20; i = i + 1)
+      $display("Even[%0d] = %0d", i, get_even(i));
+  end
+endmodule
