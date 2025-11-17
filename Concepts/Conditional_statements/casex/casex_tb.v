@@ -13,3 +13,12 @@ module tb_casex;
     in = 4'b1111; #1;
   end
 endmodule
+
+output:
+ in=1000,out=01
+ in=1100,out=01
+ in=0100,out=10
+ in=0110,out=10
+ in=1x00,out=01
+ in=01z0,out=10
+ in=1111,out=00
