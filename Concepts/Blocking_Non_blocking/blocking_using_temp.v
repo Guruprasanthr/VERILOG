@@ -1,16 +1,18 @@
 module block;
-  reg [7:0]a=10;
-  reg [7:0]b=20;
-  reg[7:0]temp;
+  reg [3:0] a = 8;
+  reg [3:0] b = 10;
+  reg [3:0] temp;
+
   initial begin
-    temp=a;
-  a=b;
-  b=a;
+    temp = a;
+    a = b;
+    b = temp;
   end
+
   initial begin
-    $display("a=%d,b=%d,temp=%d",a,b,temp);
+   $monitor("temp=%0d; a=%0d; b=%0d", temp, a, b);
   end
 endmodule
 
 output:
-a= 20,b= 20,temp= 10
+temp=8; a=10; b=8
